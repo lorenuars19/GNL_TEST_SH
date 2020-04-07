@@ -31,6 +31,7 @@ gen_file_random ()
 	rm -f main_random.c
 	echo "#include \"get_next_line.h\"" > main_random.c
 	echo "#include <stdio.h>" >> main_random.c
+	echo "#include <fcntl.h>" >> main_random.c
 	echo "" >> main_random.c
 	echo "int		main(int argc, char **argv)" >> main_random.c
 	echo "{" >> main_random.c
