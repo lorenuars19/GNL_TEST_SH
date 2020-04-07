@@ -6,4 +6,4 @@ tests your get_next_line with random strings and with stdin
 - Copy the script to your working directory
 - launch the script with `./gen_random_chars.sh [Length] [Buffer_Max] [Tests N Times] [-n No STDIN Test]`
 ## Notes
-Scritps returns non-zero status code if the test fails so you can chain it with other tests
+Scripts returns non-zero status code if the test fails so you can chain it with other tests
