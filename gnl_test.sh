@@ -6,18 +6,18 @@
 #    By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/12 11:32:47 by lorenuar          #+#    #+#              #
-#    Updated: 2020/04/10 12:09:17 by lorenuar         ###   ########.fr        #
+#    Updated: 2020/04/10 12:13:10 by lorenuar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/bash
 # ********************************* VARIABLES ******************************** #
 
-# Horrible file name to be sure to not overwrite other's main
-
 gnl_main=get_next_line.c
 gnl_header=get_next_line.h
 gnl_utils=get_next_line_utils.c
+
+# Horrible file name to be sure to not overwrite other's main
 
 random=_random_gen_
 result=_result_test_
