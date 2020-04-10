@@ -6,7 +6,7 @@
 #    By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/12 11:32:47 by lorenuar          #+#    #+#              #
-#    Updated: 2020/04/10 12:19:37 by lorenuar         ###   ########.fr        #
+#    Updated: 2020/04/10 12:30:13 by lorenuar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,11 +36,6 @@ elif [[ $# != 3 ]]; then
 [Tests N Times] [-n No STDIN Test]\n"
 	exit 1
 fi
-
-success ()
-{
-	printf "\r\033[32;1mTEST %02d/%2d >OK<\033[0m" $2 $3
-}
 
 gen_file_random ()
 {
@@ -73,15 +68,15 @@ gen_file_random ()
 
 test_random ()
 {
-	for (( i=0 ; i<=$3 ; i++ )); do
+	for (( i=1; i<=$3 ; i++ )); do
 		buf=$(( 1 + ($RANDOM * 1000) % $2 ))
 		rm -f $random
 		head -c $1 /dev/random | env LC_CTYPE=C tr -cd 'A-Za-z0-9\n' >> $random
 		echo -e "\n" >> $random
 		nchars=$(wc -c $random | tr -d '[A-z] ')
 		nlines=$(wc -l $random | tr -d '[A-z] ')
-		echo -en  "Test $i/$3\twith file of $nchars char(s)\t and $nlines \
-line(s) \tand with BUFFER_SIZE=$buf\t"
+		printf "Test %-2d/%-2d\t    with file of $nchars char(s)\t and $nlines \
+line(s) \tand with BUFFER_SIZE=$buf\t" $i $3
 		rm -f a.out log
 		gcc -Wall -Werror -Wextra -D BUFFER_SIZE=$buf \
 $main_random get_next_line.c get_next_line_utils.c
@@ -97,8 +92,7 @@ $main_random get_next_line.c get_next_line_utils.c
 			exit 1
 		fi
 		rm -f $random $result a.out
-#		printf "\033[32;1mSUCCESS\033[0m"
-		success " > SUCCESS < " $i $3
+		printf "\r\033[32;1mTEST %-2d/%-2d >OK<\033[0m" $i $3
 		echo
 	done
 	echo
