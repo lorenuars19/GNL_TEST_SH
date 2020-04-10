@@ -6,7 +6,7 @@
 #    By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/12 11:32:47 by lorenuar          #+#    #+#              #
-#    Updated: 2020/04/10 12:30:13 by lorenuar         ###   ########.fr        #
+#    Updated: 2020/04/10 12:32:33 by lorenuar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ test_random ()
 		echo -e "\n" >> $random
 		nchars=$(wc -c $random | tr -d '[A-z] ')
 		nlines=$(wc -l $random | tr -d '[A-z] ')
-		printf "Test %-2d/%-2d\t    with file of $nchars char(s)\t and $nlines \
+		printf "Test %02d/%02d\t    with file of $nchars char(s)\t and $nlines \
 line(s) \tand with BUFFER_SIZE=$buf\t" $i $3
 		rm -f a.out log
 		gcc -Wall -Werror -Wextra -D BUFFER_SIZE=$buf \
@@ -92,7 +92,7 @@ $main_random get_next_line.c get_next_line_utils.c
 			exit 1
 		fi
 		rm -f $random $result a.out
-		printf "\r\033[32;1mTEST %-2d/%-2d >OK<\033[0m" $i $3
+		printf "\r\033[32;1mTEST %02d/%02d >OK<\033[0m" $i $3
 		echo
 	done
 	echo
