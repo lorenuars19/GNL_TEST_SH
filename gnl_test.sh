@@ -6,7 +6,7 @@
 #    By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/12 11:32:47 by lorenuar          #+#    #+#              #
-#    Updated: 2020/04/10 12:32:33 by lorenuar         ###   ########.fr        #
+#    Updated: 2020/04/10 12:34:27 by lorenuar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ gen_file_random ()
 	echo -e "	free(line);" >> $main_random
 	echo -e "	return (0);" >> $main_random
 	echo -e "}" >> $main_random
-	printf "\033[32;1m$main_random created\033[0m\n"
+#	printf "\033[32;1m$main_random created\033[0m\n"
 #	cat -en $main_random
 }
 
