@@ -6,7 +6,7 @@
 #    By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/12 11:32:47 by lorenuar          #+#    #+#              #
-#    Updated: 2020/04/10 12:13:10 by lorenuar         ###   ########.fr        #
+#    Updated: 2020/04/10 12:19:37 by lorenuar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,9 @@ gnl_utils=get_next_line_utils.c
 
 random=_random_gen_
 result=_result_test_
-main_random=main_random_ignore_me.c
-main_stdin=main_stdin_ignore_me.c
-log_file=diff.log
+main_random=_main_random_ignore_me.c
+main_stdin=_main_stdin_ignore_me.c
+log_file=_diff.log
 
 # ********************************* FUNCTIONS ******************************** #
 
